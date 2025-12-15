@@ -1,6 +1,6 @@
 {
   "name": "@opencustom/ui-kit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Minimalist UI Kit by OpenCustom",
   "main": "dist/oc-ui.js",
   "style": "dist/oc-ui.css",
