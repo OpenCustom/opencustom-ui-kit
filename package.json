@@ -1,25 +1,26 @@
 {
   "name": "@opencustom/ui-kit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Minimalist UI Kit by OpenCustom",
   "main": "dist/oc-ui.js",
   "style": "dist/oc-ui.css",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "node build.js",
     "build:css": "node -e \"const fs=require('fs'); fs.copyFileSync('src/ui.css','dist/oc-ui.css'); console.log('CSS copied')\"",
     "build:js": "node -e \"const fs=require('fs'); fs.copyFileSync('src/ui.js','dist/oc-ui.js'); console.log('JS copied')\"",
-    
     "minify:css": "node -e \"const fs=require('fs'); const css=fs.readFileSync('dist/oc-ui.css','utf8'); const min=css.replace(/\\/\\*[\\s\\S]*?\\*\\//g,'').replace(/\\s+/g,' ').replace(/\\s*([{}:;,])\\s*/g,'$1').trim(); fs.writeFileSync('dist/oc-ui.min.css',min); console.log('CSS minified')\"",
-    
     "minify:js": "node -e \"const fs=require('fs'); const js=fs.readFileSync('dist/oc-ui.js','utf8'); const min=js.replace(/\\/\\/.*/g,'').replace(/\\/\\*[\\s\\S]*?\\*\\//g,'').replace(/\\n\\s*\\n/g,'\\n').replace(/\\s{2,}/g,' ').trim(); fs.writeFileSync('dist/oc-ui.min.js',min); console.log('JS minified')\"",
-    
     "minify": "npm run minify:css && npm run minify:js",
     "fullbuild": "npm run build && npm run minify",
-    
     "release": "npm run fullbuild && git add . && git commit -m 'Release v$npm_package_version' && git tag v$npm_package_version && git push && git push --tags"
   },
-  "keywords": ["ui", "kit"],
+  "keywords": [
+    "ui",
+    "kit"
+  ],
   "author": "OpenCustom",
   "license": "MIT"
 }
